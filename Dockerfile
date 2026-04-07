@@ -2,7 +2,8 @@
 FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 COPY . .
-RUN ./mvnw clear package -DskipTests
+RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
 
 # Etapa de ejecucion del jar y creacion de la imagen
 FROM eclipse-temurin:21-jre
