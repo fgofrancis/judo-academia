@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
 @RestController
 public class ContactController {
 
@@ -79,6 +81,7 @@ public class ContactController {
             return ResponseEntity.status(500).body("Error al enviar mensaje");
         }
     }
+
 
     @PostMapping("/contacto-html-tabla")
     public ResponseEntity<String> enviarFormularioHtmlTabla(
